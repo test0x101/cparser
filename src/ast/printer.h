@@ -22,13 +22,12 @@ extern void (*print_vformat)(const char *format, va_list ap);
 extern void (*print_char)(const char c);
 
 /** print a printf style format string to current output */
-static inline void __attribute__((format(printf,1,2)))
-print_format(const char *format, ...)
-{
-	va_list ap;
-	va_start(ap, format);
-	print_vformat(format, ap);
-	va_end(ap);
+static inline void __attribute__((format(printf, 1, 2)))
+print_format(const char *format, ...) {
+  va_list ap;
+  va_start(ap, format);
+  print_vformat(format, ap);
+  va_end(ap);
 }
 
 /** Set current output to be a FILE* stream */

@@ -14,11 +14,11 @@ T(U)
 T(define)
 T(defined)
 T(elif)
-T(else)  /* remember that this gives T_else, not T_IDENTIFIER like most others */
+T(else) /* remember that this gives T_else, not T_IDENTIFIER like most others */
 T(endif)
 T(error)
 T(ident)
-T(if)    /* remember that this gives T_if */
+T(if) /* remember that this gives T_if */
 T(ifdef)
 T(ifndef)
 T(include)

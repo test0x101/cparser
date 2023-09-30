@@ -9,12 +9,11 @@
 #include <libfirm/adt/obstack.h>
 
 #define obstack_chunk_alloc xmalloc
-#define obstack_chunk_free  free
+#define obstack_chunk_free free
 
-static inline void *obstack_nul_finish(struct obstack *const obst)
-{
-	obstack_1grow(obst, '\0');
-	return obstack_finish(obst);
+static inline void *obstack_nul_finish(struct obstack *const obst) {
+  obstack_1grow(obst, '\0');
+  return obstack_finish(obst);
 }
 
 #endif

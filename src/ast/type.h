@@ -14,61 +14,61 @@
 /* note that the constant values represent the rank of the types as defined
  * in § 6.3.1 */
 typedef enum atomic_type_kind_t {
-	ATOMIC_TYPE_FIRST = 1,
-	ATOMIC_TYPE_BOOL  = ATOMIC_TYPE_FIRST,
-	ATOMIC_TYPE_WCHAR_T, /* only used in C++, in C code wchar_t is a pp-macro */
-	ATOMIC_TYPE_CHAR,
-	ATOMIC_TYPE_SCHAR,
-	ATOMIC_TYPE_UCHAR,
-	ATOMIC_TYPE_SHORT,
-	ATOMIC_TYPE_USHORT,
-	ATOMIC_TYPE_INT,
-	ATOMIC_TYPE_UINT,
-	ATOMIC_TYPE_LONG,
-	ATOMIC_TYPE_ULONG,
-	ATOMIC_TYPE_LONGLONG,
-	ATOMIC_TYPE_ULONGLONG,
-	ATOMIC_TYPE_FLOAT,
-	ATOMIC_TYPE_DOUBLE,
-	ATOMIC_TYPE_LONG_DOUBLE,
+  ATOMIC_TYPE_FIRST = 1,
+  ATOMIC_TYPE_BOOL = ATOMIC_TYPE_FIRST,
+  ATOMIC_TYPE_WCHAR_T, /* only used in C++, in C code wchar_t is a pp-macro */
+  ATOMIC_TYPE_CHAR,
+  ATOMIC_TYPE_SCHAR,
+  ATOMIC_TYPE_UCHAR,
+  ATOMIC_TYPE_SHORT,
+  ATOMIC_TYPE_USHORT,
+  ATOMIC_TYPE_INT,
+  ATOMIC_TYPE_UINT,
+  ATOMIC_TYPE_LONG,
+  ATOMIC_TYPE_ULONG,
+  ATOMIC_TYPE_LONGLONG,
+  ATOMIC_TYPE_ULONGLONG,
+  ATOMIC_TYPE_FLOAT,
+  ATOMIC_TYPE_DOUBLE,
+  ATOMIC_TYPE_LONG_DOUBLE,
 
-	ATOMIC_TYPE_LAST = ATOMIC_TYPE_LONG_DOUBLE
+  ATOMIC_TYPE_LAST = ATOMIC_TYPE_LONG_DOUBLE
 } atomic_type_kind_t;
 
 typedef enum atomic_type_flags_t {
-	ATOMIC_TYPE_FLAG_NONE    = 0,
-	ATOMIC_TYPE_FLAG_SIGNED  = 1 << 0,
-	ATOMIC_TYPE_FLAG_INTEGER = 1 << 1,
-	ATOMIC_TYPE_FLAG_FLOAT   = 1 << 2,
+  ATOMIC_TYPE_FLAG_NONE = 0,
+  ATOMIC_TYPE_FLAG_SIGNED = 1 << 0,
+  ATOMIC_TYPE_FLAG_INTEGER = 1 << 1,
+  ATOMIC_TYPE_FLAG_FLOAT = 1 << 2,
 } atomic_type_flags_t;
 
 typedef enum type_qualifiers_t {
-	TYPE_QUALIFIER_NONE     = 0,
-	TYPE_QUALIFIER_CONST    = 1 << 0,
-	TYPE_QUALIFIER_RESTRICT = 1 << 1,
-	TYPE_QUALIFIER_VOLATILE = 1 << 2,
-	/* microsoft extended qualifiers */
-	TYPE_QUALIFIER_W64      = 1 << 3,
-	TYPE_QUALIFIER_PTR32    = 1 << 4,
-	TYPE_QUALIFIER_PTR64    = 1 << 5,
-	TYPE_QUALIFIER_SPTR     = 1 << 6,
-	TYPE_QUALIFIER_UPTR     = 1 << 7,
+  TYPE_QUALIFIER_NONE = 0,
+  TYPE_QUALIFIER_CONST = 1 << 0,
+  TYPE_QUALIFIER_RESTRICT = 1 << 1,
+  TYPE_QUALIFIER_VOLATILE = 1 << 2,
+  /* microsoft extended qualifiers */
+  TYPE_QUALIFIER_W64 = 1 << 3,
+  TYPE_QUALIFIER_PTR32 = 1 << 4,
+  TYPE_QUALIFIER_PTR64 = 1 << 5,
+  TYPE_QUALIFIER_SPTR = 1 << 6,
+  TYPE_QUALIFIER_UPTR = 1 << 7,
 } type_qualifiers_t;
 
-typedef struct type_base_t          type_base_t;
-typedef struct atomic_type_t        atomic_type_t;
-typedef struct pointer_type_t       pointer_type_t;
-typedef struct reference_type_t     reference_type_t;
+typedef struct type_base_t type_base_t;
+typedef struct atomic_type_t atomic_type_t;
+typedef struct pointer_type_t pointer_type_t;
+typedef struct reference_type_t reference_type_t;
 typedef struct function_parameter_t function_parameter_t;
-typedef struct function_type_t      function_type_t;
-typedef struct compound_type_t      compound_type_t;
-typedef struct enum_type_t          enum_type_t;
-typedef struct builtin_type_t       builtin_type_t;
-typedef struct array_type_t         array_type_t;
-typedef struct typedef_type_t       typedef_type_t;
-typedef struct bitfield_type_t      bitfield_type_t;
-typedef struct typeof_type_t        typeof_type_t;
-typedef union  type_t               type_t;
+typedef struct function_type_t function_type_t;
+typedef struct compound_type_t compound_type_t;
+typedef struct enum_type_t enum_type_t;
+typedef struct builtin_type_t builtin_type_t;
+typedef struct array_type_t array_type_t;
+typedef struct typedef_type_t typedef_type_t;
+typedef struct bitfield_type_t bitfield_type_t;
+typedef struct typeof_type_t typeof_type_t;
+typedef union type_t type_t;
 
 /**
  * Initializes the type system. Set some defaults on the atomic types based on a
@@ -98,9 +98,9 @@ void print_type_ext(const type_t *type, const symbol_t *symbol,
                     const scope_t *parameters);
 
 typedef enum QualifierSeparators {
-	QUAL_SEP_NONE  = 0,
-	QUAL_SEP_START = 1U << 0,
-	QUAL_SEP_END   = 1U << 1
+  QUAL_SEP_NONE = 0,
+  QUAL_SEP_START = 1U << 0,
+  QUAL_SEP_END = 1U << 1
 } QualifierSeparators;
 
 void print_type_qualifiers(type_qualifiers_t qualifiers, QualifierSeparators);
@@ -212,7 +212,7 @@ bool types_same(type_t *type0, type_t *type1);
  */
 type_t *get_unqualified_type(type_t *type);
 
-type_t *get_qualified_type(type_t*, type_qualifiers_t);
+type_t *get_qualified_type(type_t *, type_qualifiers_t);
 type_t *skip_typeref(type_t *type);
 
 /**

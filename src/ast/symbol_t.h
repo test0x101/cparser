@@ -11,11 +11,11 @@
 #include "symbol.h"
 
 struct symbol_t {
-	char const      *string;
-	token_kind_t     ID;
-	pp_token_kind_t  pp_ID;
-	entity_t        *entity;
-	pp_definition_t *pp_definition;
+  char const *string;
+  token_kind_t ID;
+  pp_token_kind_t pp_ID;
+  entity_t *entity;
+  pp_definition_t *pp_definition;
 };
 
 #endif

@@ -10,7 +10,8 @@
 #include "adt/unicode.h"
 
 typedef struct input_t input_t;
-typedef size_t (input_decoder_t)(input_t *input, utf32 *buffer, size_t buffer_size);
+typedef size_t(input_decoder_t)(input_t *input, utf32 *buffer,
+                                size_t buffer_size);
 
 input_decoder_t *input_get_decoder(const char *encoding);
 

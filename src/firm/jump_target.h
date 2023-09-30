@@ -9,13 +9,12 @@
 #include <stdbool.h>
 
 typedef struct jump_target {
-	ir_node *block;
-	bool     first;
+  ir_node *block;
+  bool first;
 } jump_target;
 
-static inline jump_target init_jump_target(ir_node *const block)
-{
-	return (jump_target){block, false};
+static inline jump_target init_jump_target(ir_node *const block) {
+  return (jump_target){block, false};
 }
 
 void jump_from_block_to_target(jump_target *tgt, ir_node *block);

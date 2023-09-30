@@ -2,8 +2,8 @@
 #define _STDDEF_H
 
 typedef __PTRDIFF_TYPE__ ptrdiff_t;
-typedef __SIZE_TYPE__    size_t;
-typedef __WCHAR_TYPE__   wchar_t;
+typedef __SIZE_TYPE__ size_t;
+typedef __WCHAR_TYPE__ wchar_t;
 
 #ifndef NULL
 #ifndef __cplusplus
@@ -13,6 +13,6 @@ typedef __WCHAR_TYPE__   wchar_t;
 #endif
 #endif
 
-#define offsetof(TYPE, MEMBER) __builtin_offsetof (TYPE, MEMBER)
+#define offsetof(TYPE, MEMBER) __builtin_offsetof(TYPE, MEMBER)
 
 #endif

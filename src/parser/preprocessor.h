@@ -48,16 +48,16 @@ void next_preprocessing_token(void);
  */
 void add_define(char const *name, char const *val, bool standard_define);
 void add_define_string(char const *name, char const *val, bool standard_define);
-void add_define_macro(char const *name, char const *macro_arg,
-                      char const *val, bool standard_define);
+void add_define_macro(char const *name, char const *macro_arg, char const *val,
+                      bool standard_define);
 void define_pragma_macro(void);
 void parse_define(char const *string);
 void undefine(char const *name);
 
 string_t *make_string(char const *string);
 
-extern bool             no_dollar_in_symbol;
-extern token_t          pp_token;
+extern bool no_dollar_in_symbol;
+extern token_t pp_token;
 extern input_decoder_t *input_decoder;
 
 void set_preprocessor_output(FILE *output);
@@ -76,7 +76,8 @@ extern searchpath_t system_searchpath;  /**< system searchpath (appended to
 extern searchpath_t after_searchpath;   /**< searchpath for -idirafter (also
                                              system paths) */
 
-void append_include_path(searchpath_t *searchpath, const char *path, bool force_sysroot);
+void append_include_path(searchpath_t *searchpath, const char *path,
+                         bool force_sysroot);
 void append_env_paths(searchpath_t *paths, const char *envvar);
 void print_include_paths(void);
 void print_defines(void);

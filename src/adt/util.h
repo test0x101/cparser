@@ -20,7 +20,7 @@
  *
  * @param a    static array
  */
-#define ARRAY_SIZE(a) (sizeof(a)/sizeof((a)[0]))
+#define ARRAY_SIZE(a) (sizeof(a) / sizeof((a)[0]))
 
 /**
  * Asserts that the constant expression x is not zero at compiletime. name has
@@ -28,16 +28,20 @@
  *
  * @note This uses the fact, that double case labels are not allowed.
  */
-#define COMPILETIME_ASSERT(x, name) \
-	static __attribute__((unused)) void compiletime_assert_##name (int h) { \
-		switch(h) { case 0: case (x): {} } \
-	}
+#define COMPILETIME_ASSERT(x, name)                                      \
+  static __attribute__((unused)) void compiletime_assert_##name(int h) { \
+    switch (h) {                                                         \
+      case 0:                                                            \
+      case (x): {                                                        \
+      }                                                                  \
+    }                                                                    \
+  }
 
 /**
  * Indicates to the compiler that the value of x is very likely 1
  * @note Only use this in speed critical code and when you are sure x is often 1
  */
-#define LIKELY(x)   __builtin_expect((x), 1)
+#define LIKELY(x) __builtin_expect((x), 1)
 /**
  * Indicates to the compiler that it's very likely that x is 0
  * @note Only use this in speed critical code and when you are sure x is often 0
@@ -57,14 +61,10 @@
 #define MAX(a, b) ((a) > (b) ? (a) : (b))
 #define MIN(a, b) ((a) < (b) ? (a) : (b))
 
-static inline bool is_alpha(char const c)
-{
-	return ('A' <= c && c <= 'Z') || ('a' <= c && c <= 'z');
+static inline bool is_alpha(char const c) {
+  return ('A' <= c && c <= 'Z') || ('a' <= c && c <= 'z');
 }
 
-static inline bool is_digit(char const c)
-{
-	return '0' <= c && c <= '9';
-}
+static inline bool is_digit(char const c) { return '0' <= c && c <= '9'; }
 
 #endif

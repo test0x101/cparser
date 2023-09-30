@@ -10,12 +10,12 @@
 typedef int (*action_func)(const char *argv0);
 
 typedef struct options_state_t {
-	int         argc;
-	char      **argv;
-	int         i;
-	bool        argument_errors;
-	bool        had_inputs;
-	action_func action;
+  int argc;
+  char **argv;
+  int i;
+  bool argument_errors;
+  bool had_inputs;
+  action_func action;
 } options_state_t;
 
 bool options_parse_early_target(options_state_t *state);
