@@ -8,3 +8,5 @@
 *.vcproj.*.*.user
 *.suo
 *.ncb
+.idea
+cmake-build-debug
